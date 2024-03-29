@@ -1,0 +1,23 @@
+# Use postgres/example user/password credentials
+version: '3.9'
+
+services:
+  postgres:
+    image: postgres
+    container_name: taller1
+    environment:
+      POSTGRES_DB: taller1
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+    ports:
+      - "5432:5432"
+    # Servicio de base de datos para pruebas
+  postgres-test:
+    image: postgres:latest
+    container_name: postgres-test
+    ports:
+      - "5433:5432"  # Puertos diferentes para evitar conflictos con el servicio de desarrollo
+    environment:
+      POSTGRES_DB: testdb
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
