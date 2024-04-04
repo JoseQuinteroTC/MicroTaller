@@ -21,6 +21,7 @@ public class ProductoRepositoryTest extends AbstractIntegrationDBTest {
     void setUp() {
         productoRepository.deleteAll();
     }
+    //test de los productos
 
     Producto getProductoMock() {
         return Producto.builder()
